@@ -1,0 +1,17 @@
+button.Info{
+    background: none;
+    border:none;
+}
+
+h1{
+    text-align: center;
+}
+
+li{
+    margin-left: 10px;
+    list-style: none;
+}
+
+h3{
+    margin: 0%;
+}

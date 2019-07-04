@@ -1,0 +1,15 @@
+
+
+
+<p-panel header="Player info">
+    <input type="text" [(ngModel)]="SearchPerson">
+    <p *ngIf="personinfo">
+      <br>
+      name: <strong>{{personinfo.name}}</strong>
+      <br>
+      Ranking: <strong> {{personinfo.klassement}}</strong>
+      <br>
+      Ranking value: <strong>{{personinfo.waardeKlassement}}</strong>
+      <br>
+    </p>
+  </p-panel>

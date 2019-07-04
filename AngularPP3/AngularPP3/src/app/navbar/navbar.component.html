@@ -1,0 +1,13 @@
+<p-toolbar>
+  <div class="ui-toolbar-group-left">
+        <button pButton type="button" label="Home" icon="pi pi-home" [routerLink]="['/home']" [routerLinkActive]="['ui-button-success']"></button>
+        <button pButton type="button" label="Star Wars"  [routerLink]="['/star']" [routerLinkActive]="['ui-button-success']"></button>
+        <button pButton type="button" label="API-PP" [routerLink]="['/pp']" [routerLinkActive]="['ui-button-success']"></button>
+  </div>
+  <div class="ui-toolbar-group-right"> 
+    <button *ngIf="!authService.isAuthenticated" pButton type="button" label="Login" (click)="user.tryGoogleLogin()"></button>
+    <button *ngIf="authService.isAuthenticated" pButton type="button" label="{{user.name}}"></button>
+    <img *ngIf="authService.isAuthenticated" src="{{user.image}}" height="30" width="30"/><span class="caret"></span>  
+    <button *ngIf="authService.isAuthenticated" pButton type="button" label="logout" (click)="user.logout()"></button>
+  </div >
+</p-toolbar>

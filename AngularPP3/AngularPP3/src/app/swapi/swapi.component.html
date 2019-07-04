@@ -1,0 +1,53 @@
+<div class="ui-g">
+    <div class="ui-g-2"></div>
+    <div class="ui-g-4">
+        <p-table [value]="people.results">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Characters</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-peop let-i> 
+              <tr style="text-align:center;">
+                    <td><button class="Info" (click)="Info()">{{peop.name}}</button></td>
+                </tr>
+             
+            </ng-template>
+          
+            <ng-template pTemplate="footer">
+              <tr style="text-align:center;">
+                <td> <button pButton type="button" label="Next" class="ui-button-danger" (click)="Click2($event)" style="margin:0.5%" ></button>  
+                  <button pButton type="button" label="Previous" class="ui-button-danger" (click)="Click($event)" style="margin:0.5%"></button></td>  
+              </tr>
+            </ng-template>
+          </p-table>
+    </div>
+    <div class="ui-g-4"><p-panel header="{{PersonInfo.name}}">
+        <h3>Search by ID</h3>
+        <input type="text" [(ngModel)]="Searchperson">
+        <br><br>
+         <p *ngIf = "PersonInfo">
+           Name:&nbsp; <b> {{PersonInfo.name}} </b>
+           <br> 
+           Birth Year: &nbsp;<b> {{PersonInfo.birth_year}} </b>
+           <br> 
+           Gender: &nbsp; <b>{{PersonInfo.gender}}</b>
+         </p>
+         
+         <p *ngIf = "PlanetInfo">  
+            HomePlanet: &nbsp;<b>{{PlanetInfo.name}}</b>
+          </p>
+          <p> Movies: </p>
+        
+           <li *ngFor= "let lijst of lijstfilms">
+              <b>{{lijst}}</b>
+          </li>
+         
+      
+      </p-panel></div>
+    <div class="ui-g-2"></div>
+</div>
+
+
+
+

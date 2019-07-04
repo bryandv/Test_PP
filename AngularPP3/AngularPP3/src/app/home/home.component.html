@@ -1,0 +1,19 @@
+
+
+<div class="ui-g">
+    <div class="ui-g-4"></div>
+    <div class="ui-g-4 ">
+      <div class="home">
+
+      
+        <h1>Cloud API's project</h1>
+        <p>This is a project of Devolder Bryan. Before starting you need to login.
+          <br>
+          The first tab is a 3th party API about star wars, the second is a selfmade API about table tennis players.
+        </p>
+        <button *ngIf="!authService.isAuthenticated" type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
+        <button *ngIf="authService.isAuthenticated" type="button" class="btn btn-danger btn-block" (click)="user.logout()">Logout</button>
+      </div>
+    </div>
+    <div class="ui-g-4"></div>
+</div>
