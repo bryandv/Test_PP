@@ -22,7 +22,7 @@ namespace API_PP.Controllers
         [HttpGet]
         public List<Speler2> GetAllSpelers(string Klassement, string Name,string sort, int? page, string dir = "asc", int length = 2)
         {
-            IQueryable<Speler2> query = _context.Speler;
+            IQueryable<Speler2> query = _context.Speler.Include(d => d.Club);
 
            // if (!string.IsNullOrWhiteSpace(Klassement))
                 //query = query.Where(d => (d.Klassement == "C0") || (d.Klassement == "C2") || (d.Klassement == "C4") || (d.Klassement == "C6"));
@@ -52,7 +52,11 @@ namespace API_PP.Controllers
                     /*voorlopige test met B en C klassement moet nog uitgebreid worden naar de overige klassementen A,D,E,F,NG*/
                     case "B":
                         if (!string.IsNullOrWhiteSpace(Klassement))
+                        {
                             query = query.Where(d => (d.Klassement == "B0") || (d.Klassement == "B2") || (d.Klassement == "B4") || (d.Klassement == "B6"));
+                            query = query.Take(query.Count());
+                            return query.ToList();
+                        }
                         break;
                     case "C":
                         if (!string.IsNullOrWhiteSpace(Klassement))
@@ -67,10 +71,6 @@ namespace API_PP.Controllers
                         break;
                 }
             }
-
-
-
-            
 
 
             if(page.HasValue)
@@ -101,6 +101,18 @@ namespace API_PP.Controllers
         {
             /*Als club wordt toegevoegd controleren of club al bestaat en deze met de juiste id toevoegen.*/
             /*Als deze nog niet bestaat nieuwe aanmaken*/
+            IQueryable<Speler2> query = _context.Speler.Include(d => d.Club);
+
+            foreach (Speler2 speler in query)
+            {
+                if(!(speler.Club == null))
+                if(speler.Club.Name == newspeler.Club.Name)
+                {
+                    newspeler.Club.Name = speler.Club.Name;
+                    newspeler.Club.Location = speler.Club.Location;
+                    newspeler.Club.Id = speler.Club.Id;
+                }
+            }
 
 
             _context.Speler.Add(newspeler);
