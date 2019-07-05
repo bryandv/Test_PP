@@ -20,19 +20,20 @@ namespace API_PP.Controllers
         }
 
         [HttpGet]
-        public List<Speler2> GetAllSpelers(string Klassement, string Name, string sort, int? page, string dir = "asc", int length =2)
+        public List<Speler2> GetAllSpelers(string Klassement, string Name,string sort, int? page, string dir = "asc", int length = 2)
         {
             IQueryable<Speler2> query = _context.Speler;
 
-            if (!string.IsNullOrWhiteSpace(Klassement))
-                query = query.Where(d => d.Klassement == Klassement);
+           // if (!string.IsNullOrWhiteSpace(Klassement))
+                //query = query.Where(d => (d.Klassement == "C0") || (d.Klassement == "C2") || (d.Klassement == "C4") || (d.Klassement == "C6"));
             if (!string.IsNullOrWhiteSpace(Name))
                 query = query.Where(d => d.Name == Name);
 
 
-            if(!string.IsNullOrWhiteSpace(sort))
+            /*Sorteren van spelers op klassement in beide richtingingen*/
+            if (!string.IsNullOrWhiteSpace(sort))
             {
-                switch(sort)
+                switch (sort)
                 {
                     case "WaardeKlassement":
                         if (dir == "asc")
@@ -42,6 +43,35 @@ namespace API_PP.Controllers
                         break;
                 }
             }
+
+            /*Oproepen van spelers op reeks*/
+            if (!string.IsNullOrWhiteSpace(Klassement))
+            {
+                switch(Klassement)
+                {
+                    /*voorlopige test met B en C klassement moet nog uitgebreid worden naar de overige klassementen A,D,E,F,NG*/
+                    case "B":
+                        if (!string.IsNullOrWhiteSpace(Klassement))
+                            query = query.Where(d => (d.Klassement == "B0") || (d.Klassement == "B2") || (d.Klassement == "B4") || (d.Klassement == "B6"));
+                        break;
+                    case "C":
+                        if (!string.IsNullOrWhiteSpace(Klassement))
+                        {
+                            query = query.Where(d => (d.Klassement == "C0") || (d.Klassement == "C2") || (d.Klassement == "C4") || (d.Klassement == "C6"));
+                            
+                            //query = query.Skip(query.Count());
+                            query = query.Take(query.Count());
+                            return query.ToList();
+                        }
+                            
+                        break;
+                }
+            }
+
+
+
+            
+
 
             if(page.HasValue)
                 query = query.Skip(page.Value * length);
@@ -69,6 +99,10 @@ namespace API_PP.Controllers
         [HttpPost]
         public IActionResult CreateSpeler([FromBody] Speler2 newspeler)
         {
+            /*Als club wordt toegevoegd controleren of club al bestaat en deze met de juiste id toevoegen.*/
+            /*Als deze nog niet bestaat nieuwe aanmaken*/
+
+
             _context.Speler.Add(newspeler);
             _context.SaveChanges();
             return Created("", newspeler);

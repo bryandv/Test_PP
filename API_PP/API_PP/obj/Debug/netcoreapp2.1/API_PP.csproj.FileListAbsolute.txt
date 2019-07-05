@@ -26,3 +26,17 @@ C:\ap\2018-2019\Cloud_Api\CloudApi\CloudApi\API_PP\API_PP\obj\Debug\netcoreapp2.
 C:\ap\2018-2019\Cloud_Api\CloudApi\CloudApi\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.RazorTargetAssemblyInfo.cache
 C:\ap\2018-2019\Cloud_Api\CloudApi\CloudApi\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.dll
 C:\ap\2018-2019\Cloud_Api\CloudApi\CloudApi\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.pdb
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\bin\Debug\netcoreapp2.1\API_PP.deps.json
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\bin\Debug\netcoreapp2.1\API_PP.runtimeconfig.json
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\bin\Debug\netcoreapp2.1\API_PP.runtimeconfig.dev.json
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\bin\Debug\netcoreapp2.1\API_PP.dll
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\bin\Debug\netcoreapp2.1\API_PP.pdb
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.csprojAssemblyReference.cache
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.csproj.CoreCompileInputs.cache
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.RazorAssemblyInfo.cache
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.RazorAssemblyInfo.cs
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.AssemblyInfoInputs.cache
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.AssemblyInfo.cs
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.RazorTargetAssemblyInfo.cache
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.dll
+C:\PingPong_Program\Tornooi_PP_API_Test\Test_PP\API_PP\API_PP\obj\Debug\netcoreapp2.1\API_PP.pdb
